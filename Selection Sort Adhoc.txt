@@ -1,0 +1,15 @@
+def selectionSort(N,arr):
+    for i in range(N-1):
+        max=0
+        for j in range(1,N-i,1):
+            if(arr[j]>arr[max]):
+                max=j
+        print(max,end=' ')
+        arr[max],arr[N-1-i]=arr[N-1-i],arr[max]
+    print()
+        
+t=int(input())
+for _ in range(t):
+    N=int(input())
+    arr=list(map(int,input().split()))
+    selectionSort(N,arr)
