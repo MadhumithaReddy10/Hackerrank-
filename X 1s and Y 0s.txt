@@ -1,0 +1,20 @@
+m=1000000007
+
+def power(x,y,p):
+    res=1
+    x=x%p
+    while y>0:
+        if y%2==1:
+            res=(res*x)%p
+        y=y//2
+        x=(x*x)%p
+    return res
+
+def xZerosYones(x,y):
+    return (power(2,x+y,m)-power(2,y,m)+m)%m
+
+T = int(input())
+
+for _ in range(T):
+    x, y = map(int, input().split())
+    print(xZerosYones(x,y))
