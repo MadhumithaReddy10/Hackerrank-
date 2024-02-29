@@ -1,0 +1,20 @@
+def openParenthesis(ar,N,oc,cc,idx):
+    if(idx==N) :
+        for i in range(N):
+            print(ar[i],end="")
+        print()
+        return
+    if(oc<N/2):
+        ar[idx]='{'
+        openParenthesis(ar,N,oc+1,cc,idx+1)
+    if(oc>cc):
+        ar[idx]='}'
+        openParenthesis(ar,N,oc,cc+1,idx+1)
+    
+t=int(input())
+for i in range(t):
+    print("Test Case #"+str(i+1)+":")
+    N=int(input())
+    N = N * 2
+    ar=[0 for x in range(N)]
+    openParenthesis(ar,N,0,0,0)
