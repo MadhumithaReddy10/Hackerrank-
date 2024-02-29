@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int T = s.nextInt();
+        int[] arr = new int[T];
+        int top = -1;
+        
+        while(T-->0) {
+            String S = s.next();
+            if(S.equals("push")) {
+                int x = s.nextInt();
+                arr[++top] = x;
+        } else if(top == -1) {
+                System.out.println("Empty");
+            } else {
+                System.out.println(arr[top]);
+                top--;
+            }
+            }
+        }
+    }
