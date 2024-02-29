@@ -1,0 +1,13 @@
+def towerOfHannoi(n,fr,to,aux):
+    if n==1:
+        print("Move 1"+" from "+str(fr)+" to "+str(to))
+        return
+    towerOfHannoi(n-1,fr,aux,to)
+    print("Move "+str(n)+" from "+str(fr)+" to "+str(to))
+    towerOfHannoi(n-1,aux,to,fr)
+    
+T=int(input())
+for _ in range(T):
+    n=int(input())
+    print(pow(2,n)-1)
+    towerOfHannoi(n,"A","C","B")
