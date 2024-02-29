@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int T = s.nextInt();
+        int[] arr = new int[T];
+        int front = 0;
+        int rear = -1;
+        
+        while(T-->0) {
+            String S = s.next();
+            
+            if(S.equals("Enqueue")) {
+                int x = s.nextInt();
+                arr[++rear] = x;
+            } else {
+                if(front > rear) {
+                    System.out.println("Empty");
+                } else {
+                    System.out.println(arr[front++]);
+                }
+            }
+        }
+    }
+}
